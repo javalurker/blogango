@@ -1,6 +1,6 @@
 blogango
 ========
-blogango是一个基于django框架的python博客程序
+blogango是一个基于django框架的python博客APP
 
 基于：
 
