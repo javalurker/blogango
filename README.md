@@ -4,9 +4,13 @@ blogango是一个基于django框架的python博客程序
 
 基于：
 django1.4
+
 django admin site
+
 django-taggit
+
 jingo
+
 多说评论系统
 
 1、修改settings.py配置如下：
