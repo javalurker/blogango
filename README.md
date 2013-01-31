@@ -3,6 +3,7 @@ blogango
 blogango是一个基于django框架的python博客程序
 
 基于：
+
 django1.4
 
 django admin site
@@ -23,10 +24,10 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
+
 B、修改INSTALLED_APPS
 
 	...
-
 	'blogango',
 	...
 	
