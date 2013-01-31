@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="/static/css/base.css?v=2s31" charset="utf-8" />
+<link rel="alternate" type="application/rss+xml" title="{{ blogerinfo.username }} RSS Feed" href="http://d4blog.sinaapp.com/blog/{{ blogerinfo.username }}/feed" />
+
+<title>{{ title }}</title>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/base.js?v=002"></script>
+<meta name="description" content="{{ title }}" />
+
+</head>
+<body>
+<form method="get" action="http://google.com/search">
+<input type="hidden" value="site:d4blog.sinaapp.com" name="q">
+<div class="headerbar shadow">
+<div>
+<a href="/blog/{{ blogerinfo.username }}/" class="blogname">{{ blogerinfo.username }}</a>
+<div class="headernav">
+<a href="/blog/{{ blogerinfo.username }}/a/0">关于</a>
+<span><input name="q" type="text" value=""></span>
+<a href="javascript:void(0)" onclick="toggleNav('category')">类别</a>
+<a href="javascript:void(0)" onclick="toggleNav('months')">月份归档</a>
+<a href="javascript:void(0)" onclick="toggleNav('links')">友情链接</a>
+<a href="/blog/{{ blogerinfo.username }}/feed" target="_blank">RSS订阅</a>
+
+</div>
+</div>
+</div>
+</form>
+<div class="category shadow">
+<div>
+
+{% for cg in category %}
+<a href="/blog/{{ blogerinfo.username }}/t/{{ cg.name }}/1" style="font-size:12.7826086957px;">{{ cg.name }}</a>
+{% endfor %}
+
+</div>
+</div>
+<div class="months shadow">
+<div>
+
+{% for archive in archives %}
+<a href="/blog/{{ blogerinfo.username }}/date/{{ archive.archive_date }}/1">{{ archive.archive_date }} ({{ archive.archive_num }})</a>
+{% endfor %}
+
+</div>
+</div>
+<div class="links shadow">
+<div>
+{% for link in links %}
+<a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+{% endfor %}
+</div>
+</div>
+{% block content %} {% endblock %}
+<div class="copyright">Powered by Javalurker on Django</div>
+
+<link rel="stylesheet" title="Sunburst" href="/static/syntaxhighlighter/styles/shCoreDefault.css">
+<script src="/static/syntaxhighlighter/shCore.js"></script>
+<script src="/static/syntaxhighlighter/shAutoloader.js"></script>
+<script>
+SyntaxHighlighter.autoloader(
+    'java            /static/syntaxhighlighter/shBrushJava.js',
+    'php            /static/syntaxhighlighter/shBrushPhp.js',
+    'html xml            /static/syntaxhighlighter/shBrushXml.js',
+    'css            /static/syntaxhighlighter/shBrushCss.js',
+    'js jscript javascript            /static/syntaxhighlighter/shBrushJScript.js',
+    'bash shell            /static/syntaxhighlighter/shBrushBash.js',
+    'python            /static/syntaxhighlighter/shBrushPython.js',
+    'ruby            /static/syntaxhighlighter/shBrushRuby.js',
+    'sql            /static/syntaxhighlighter/shBrushSql.js'
+);
+SyntaxHighlighter.all();
+</script>
+</body>
+</html>

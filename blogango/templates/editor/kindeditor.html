@@ -1,0 +1,17 @@
+<script type="text/javascript">  
+(function($) {
+	$.getScript('/static/kindeditor/kindeditor.js?v=544', function() {
+		KindEditor.basePath = '/static/kindeditor/';
+		KindEditor.create('textarea[name="content"]',
+			{
+			height : '400px',
+			items : [
+						'source', '|','undo', 'redo', '|','preview', 'template', 'code', 'cut', 'copy', 'paste','plainpaste', 
+						'wordpaste', '|','justifyleft', 'justifycenter', 'justifyright','justifyfull', 'insertorderedlist', 
+						'insertunorderedlist', 'indent', 'outdent', 'subscript', 'superscript', 'clearhtml', 'quickformat', 
+						'selectall', '|', '/','formatblock', 'fontname', 'fontsize', '|','forecolor', 'hilitecolor', 'bold', 
+						'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'table', 'hr', 'emoticons', 
+						'pagebreak', 'anchor', 'link', 'unlink','insertfile',]});
+	});			   
+})(django.jQuery);
+</script>  

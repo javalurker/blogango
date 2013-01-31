@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %} 
+{% from "macros.html" import render_post,render_pages,render_pages_category,render_pages_date %}
+{% for post in list_posts %}
+{{ render_post(blogerinfo.username,post.id,post.title,post.create_date,post.content,post.category,loop.index) }}
+{% endfor %}
+<div class="pages">
+{% if _category %}
+{{ render_pages_category(cur_page,pages,page_count,_category,blogerinfo.username) }}
+{% elif date %}
+{{ render_pages_date(cur_page,pages,page_count,date,blogerinfo.username) }}
+{% else %}
+{{ render_pages(cur_page,pages,page_count,blogerinfo.username) }}
+{% endif %}
+    <a style="display:none;" rel="nofollow" href="#top" id="go-to-top">▲</a>
+    <a rel="nofollow" href="#down" id="go-to-down">▼</a>
+</div>
+<script type="text/javascript">
+	var to_down = 1;
+    $(function(){
+        $("#go-to-down").click(function(){
+			var vid="#"+to_down;
+            $("html, body").animate({'scrollTop': $(vid).offset().top}, 400);
+			if(to_down<{{ list_posts|length()}}){
+				to_down = to_down+1;
+			} else {
+				$("#go-to-down").fadeOut();
+			}
+            return false;
+        });
+        $("#go-to-top").click(function(){
+            $("html, body").animate({'scrollTop': 0}, 400);
+			to_down = 1;
+			$("#go-to-down").fadeIn();
+            return false;
+        });
+        $(window).scroll(function() {
+            var top = $(document).scrollTop();
+            var g = $("#go-to-top");
+            if (top > 50 && g.is(":hidden")) {
+                g.fadeIn();
+            } else if(top < 50 && g.is(":visible")) {
+                g.fadeOut();
+            }
+        }); 
+    })    
+</script>
+{% endblock %}

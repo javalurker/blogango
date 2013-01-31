@@ -1,0 +1,87 @@
+{% macro render_post(username, id, title, create_date, content, category=None,divid=1) %}
+<div id='{{ divid }}' class="article shadow">
+<div class="title"><a href="/blog/{{ username }}/a/{{ id }}">{{ title }}</a></div>
+<div class="postdate">{{ create_date }}</div>
+<div class="content">{{ content|safe }}</div>
+<div class="bottom">Category {% if category %}<a href="/blog/{{ username }}/t/{{ category }}/1">{{ category }}</a>{% endif %}</div>
+</div>
+{% endmacro %}
+{% macro render_post_com(username, id, title, create_date, content, category=None) %}
+<div class="article shadow">
+<div class="title"><a href="/blog/{{ username }}/a/{{ id }}">{{ title }}</a></div>
+<div class="postdate">{{ create_date }}</div>
+<div class="content">{{ content|safe }}</div>
+<div class="bottom">Category {% if category %}<a href="/blog/{{ username }}/t/{{ category }}/1">{{ category }}</a>{% endif %}</div>
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"d4blog"};
+</script>
+<script type="text/javascript" src="http://static.duoshuo.com/embed.js" async="true"></script>
+<!-- Duoshuo Comment END -->
+</div>
+</div>
+{% endmacro %}
+{% macro render_pages(cur_page, pages, page_count, username) %}
+<ul>
+{% if cur_page > 1 %}
+<li><a href="/blog/{{ username }}/">&lt;&lt;</a></li>
+
+<li><a href="/blog/{{ username }}/p/{{ cur_page-1 }}">&lt;</a></li>
+{% endif %}
+{% for number in pages %}
+	{% if cur_page == number %}
+		<li><a href="/blog/{{ username }}/p/{{ number }}" class="current">{{ number }}</a></li>
+	{% else %}
+		<li><a href="/blog/{{ username }}/p/{{ number }}">{{ number }}</a></li>
+	{% endif %}
+{% endfor %}
+{% if cur_page < page_count %}
+<li><a href="/blog/{{ username }}/p/{{ cur_page+1 }}">&gt;</a></li>
+
+<li><a href="/blog/{{ username }}/p/{{ page_count }}">&gt;&gt;</a></li>
+{% endif %}
+</ul>
+{% endmacro %}
+{% macro render_pages_category(cur_page, pages, page_count, category, username) %}
+<ul>
+{% if cur_page > 1 %}
+<li><a href="/blog/{{ username }}/t/{{ category }}/1">&lt;&lt;</a></li>
+
+<li><a href="/blog/{{ username }}/t/{{ category }}/{{ cur_page-1 }}">&lt;</a></li>
+{% endif %}
+{% for number in pages %}
+	{% if cur_page == number %}
+		<li><a href="/blog/{{ username }}/t/{{ category }}/{{ number }}" class="current">{{ number }}</a></li>
+	{% else %}
+		<li><a href="/blog/{{ username }}/t/{{ category }}/{{ number }}">{{ number }}</a></li>
+	{% endif %}
+{% endfor %}
+{% if cur_page < page_count %}
+<li><a href="/blog/{{ username }}/t/{{ category }}/{{ cur_page+1 }}">&gt;</a></li>
+
+<li><a href="/blog/{{ username }}/t/{{ category }}/{{ page_count }}">&gt;&gt;</a></li>
+{% endif %}
+</ul>
+{% endmacro %}
+{% macro render_pages_date(cur_page, pages, page_count, date, username) %}
+<ul>
+{% if cur_page > 1 %}
+<li><a href="/blog/{{ username }}/date/{{ date }}/1">&lt;&lt;</a></li>
+
+<li><a href="/blog/{{ username }}/date/{{ date }}/{{ cur_page-1 }}">&lt;</a></li>
+{% endif %}
+{% for number in pages %}
+	{% if cur_page == number %}
+		<li><a href="/blog/{{ username }}/date/{{ date }}/{{ number }}" class="current">{{ number }}</a></li>
+	{% else %}
+		<li><a href="/blog/{{ username }}/date/{{ date }}/{{ number }}">{{ number }}</a></li>
+	{% endif %}
+{% endfor %}
+{% if cur_page < page_count %}
+<li><a href="/blog/{{ username }}/date/{{ date }}/{{ cur_page+1 }}">&gt;</a></li>
+
+<li><a href="/blog/{{ username }}/date/{{ date }}/{{ page_count }}">&gt;&gt;</a></li>
+{% endif %}
+</ul>
+{% endmacro %}

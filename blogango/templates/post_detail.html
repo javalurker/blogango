@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %} 
+{% from "macros.html" import render_post_com %}
+{{ render_post_com(bloger_name,post.id,post.title,post.create_date,post.content,post.category) }}
+{% endblock %}

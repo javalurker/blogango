@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+        <title>{{ bloger_name }}</title>
+        <subtitle>{{ bloger_name }}</subtitle>
+        <link href="http://d4blog.sinaapp.com/blog/{{bloger_name}}/" rel="self" /> 
+ {% for post in list_posts %}
+        <entry>
+                <title>{{post.title}}</title>
+				<id>http://d4blog.sinaapp.com/blog/{{bloger_name}}/a/{{post.id}}</id>
+                <link href="http://d4blog.sinaapp.com/blog/{{bloger_name}}/a/{{post.id}}" />
+                <updated>{{post.create_date}}</updated>
+                <description>{{post.title}}</description>
+                <author>
+                      <name>{{bloger_name}}</name>
+                </author>
+        </entry>
+ {% endfor %}
+</feed>
