@@ -19,16 +19,20 @@ jingo
 A、加入jingo,修改settings配置文件
 
 TEMPLATE_LOADERS = (
-  'jingo.Loader',
+    'jingo.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
 
 
-B、修改INSTALLED_APPS
+B、加入django-taggit
+
+
+C、修改INSTALLED_APPS
 
 	...
 	'blogango',
+        'taggit',
 	...
 	
 
