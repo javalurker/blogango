@@ -8,6 +8,6 @@ urlpatterns = patterns('',
     url(r'^(?P<bloger_name>\w+)/date/(?P<date>\w+)/(?P<pages_id>\w+)/$', toindex_date),
     url(r'^(?P<bloger_name>\w+)/a/(?P<id>\w+)/$', topostdetail),
     url(r'^(?P<bloger_name>\w+)/feed/$', feed_atom),
-    url(r'^(?P<bloger_name>\w+)/sitmap/$', sitmap),
+    url(r'^(?P<bloger_name>\w+)/sitemap/$', sitmap),
     url(r'^upload/uploadFile/$', uploadFile),
 )

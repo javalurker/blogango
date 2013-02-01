@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 import os
 import time
 
-from djangoblog import settings
 from models import *
 from config import *
 
@@ -105,7 +104,8 @@ def feed_atom(request,bloger_name):
 	return HttpResponse(t.render(c), mimetype="text/plain")
 	
 def sitmap(request,bloger_name):
-	print('----------sitmap-----------')
+	posts = Post.objects.filter(creator_name=bloger_name,disabled='N').order_by('-create_date').all()
+	dt = time.strftime("%Y-%m-%dT%H:%M:%S+08:00", time.localtime())
 	t = get_template('sitemap.xml')
 	c = RequestContext(request,locals())
 	return HttpResponse(t.render(c), mimetype="text/plain")
