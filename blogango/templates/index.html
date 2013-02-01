@@ -2,7 +2,7 @@
 {% block content %} 
 {% from "macros.html" import render_post,render_pages,render_pages_category,render_pages_date %}
 {% for post in list_posts %}
-{{ render_post(blogerinfo.username,post.id,post.title,post.create_date,post.content,post.category,loop.index) }}
+{{ render_post(blogerinfo.username,post.id,post.title,post.create_date,post.content,post.category,post.tags,loop.index) }}
 {% endfor %}
 <div class="pages">
 {% if _category %}

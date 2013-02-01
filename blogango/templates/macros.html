@@ -1,17 +1,17 @@
-{% macro render_post(username, id, title, create_date, content, category=None,divid=1) %}
+{% macro render_post(username, id, title, create_date, content, category=None, tags=None, divid=1) %}
 <div id='{{ divid }}' class="article shadow">
 <div class="title"><a href="/blog/{{ username }}/a/{{ id }}">{{ title }}</a></div>
 <div class="postdate">{{ create_date }}</div>
 <div class="content">{{ content|safe }}</div>
-<div class="bottom">Category {% if category %}<a href="/blog/{{ username }}/t/{{ category }}/1">{{ category }}</a>{% endif %}</div>
+<div class="bottom">Category {% if category %}<a href="/blog/{{ username }}/t/{{ category }}/1">{{ category }}</a>{% endif %} Tags {% for tag in tags.all() %}{{ tag.name }} | {% endfor %}</div>
 </div>
 {% endmacro %}
-{% macro render_post_com(username, id, title, create_date, content, category=None) %}
+{% macro render_post_com(username, id, title, create_date, content, category=None, tags=None) %}
 <div class="article shadow">
 <div class="title"><a href="/blog/{{ username }}/a/{{ id }}">{{ title }}</a></div>
 <div class="postdate">{{ create_date }}</div>
 <div class="content">{{ content|safe }}</div>
-<div class="bottom">Category {% if category %}<a href="/blog/{{ username }}/t/{{ category }}/1">{{ category }}</a>{% endif %}</div>
+<div class="bottom">Category {% if category %}<a href="/blog/{{ username }}/t/{{ category }}/1">{{ category }}</a>{% endif %} Tags {% for tag in tags.all() %}{{ tag.name }} | {% endfor %}</div>
 <!-- Duoshuo Comment BEGIN -->
 <div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>
 <script type="text/javascript">
