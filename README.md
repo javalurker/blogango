@@ -16,7 +16,7 @@ jingo
 
 1、修改settings.py配置如下：
 
-A、加入jingo
+A、加入jingo,修改settings配置文件
 
 TEMPLATE_LOADERS = (
   'jingo.Loader',
