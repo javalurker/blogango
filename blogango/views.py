@@ -21,7 +21,7 @@ def toindex(request,bloger_name,pages_id):
 	else:
 		page_count = page_count/BLOG_PAGING_SIZE+1
 		pages = range(1,page_count+1)
-	list_posts = Post.objects.filter(creator_name=bloger_name,id__gt=0,disabled='N').order_by('-create_date')[(cur_page-1)*BLOG_PAGING_SIZE:cur_page*BLOG_PAGING_SIZE]
+	list_posts = Post.objects.filter(creator_name=bloger_name,id__gt=0,disabled='N').order_by('-id')[(cur_page-1)*BLOG_PAGING_SIZE:cur_page*BLOG_PAGING_SIZE]
 	archives = Archive.objects.filter(creator_name=bloger_name,disabled='N').order_by('archive_date')
 	links = Link.objects.filter(creator_name=bloger_name,disabled='N').order_by('displayorder')
 	category = Category.objects.filter(creator_name=bloger_name,disabled='N')
@@ -40,7 +40,7 @@ def toindex_category(request,bloger_name,_category,pages_id):
 	else:
 		page_count = page_count/BLOG_PAGING_SIZE+1
 		pages = range(1,page_count+1)
-	list_posts = Post.objects.filter(creator_name=bloger_name,id__gt=0,category=_category,disabled='N').order_by('-create_date')[(cur_page-1)*BLOG_PAGING_SIZE:cur_page*BLOG_PAGING_SIZE]
+	list_posts = Post.objects.filter(creator_name=bloger_name,id__gt=0,category=_category,disabled='N').order_by('-id')[(cur_page-1)*BLOG_PAGING_SIZE:cur_page*BLOG_PAGING_SIZE]
 	archives = Archive.objects.filter(creator_name=bloger_name,disabled='N').order_by('archive_date')
 	links = Link.objects.filter(creator_name=bloger_name,disabled='N').order_by('displayorder')
 	category = Category.objects.filter(creator_name=bloger_name,disabled='N')
@@ -59,7 +59,7 @@ def toindex_date(request,bloger_name,date,pages_id):
 	else:
 		page_count = page_count/BLOG_PAGING_SIZE+1
 		pages = range(1,page_count+1)
-	list_posts = Post.objects.filter(creator_name=bloger_name,id__gt=0,archive_date=date,disabled='N').order_by('-create_date')[(cur_page-1)*BLOG_PAGING_SIZE:cur_page*BLOG_PAGING_SIZE]
+	list_posts = Post.objects.filter(creator_name=bloger_name,id__gt=0,archive_date=date,disabled='N').order_by('-id')[(cur_page-1)*BLOG_PAGING_SIZE:cur_page*BLOG_PAGING_SIZE]
 	archives = Archive.objects.filter(creator_name=bloger_name,disabled='N').order_by('archive_date')
 	links = Link.objects.filter(creator_name=bloger_name,disabled='N').order_by('displayorder')
 	category = Category.objects.filter(creator_name=bloger_name,disabled='N')
