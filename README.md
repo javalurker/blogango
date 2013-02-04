@@ -10,11 +10,15 @@ django admin site
 
 django-taggit
 
+jinja2
+
 jingo
 
 多说评论系统
 
-1、修改settings.py配置如下：
+1、安装jinja2， easy_install jinja2
+
+2、修改settings.py配置如下：
 
 A、加入jingo,修改settings配置文件
 
@@ -36,7 +40,7 @@ C、修改INSTALLED_APPS
 	...
 	
 
-2、创建多说评论系统账号，修改macros.html
+3、创建多说评论系统账号，修改macros.html
 
 <!-- Duoshuo Comment BEGIN -->
 <div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>
@@ -49,10 +53,10 @@ var duoshuoQuery = {short_name:"d4blog"};
 改成你自己的多说账号
 
 
-3、执行：python manage.py syncdb
+4、执行：python manage.py syncdb
 
 创建你的admin site账号，
 
-4、启动服务，
+5、启动服务，
 
 输入http://localhost:8000/blog/javalurker（其中javalurker为你的系统账号，admin创建；blog为你自定义的urls）
