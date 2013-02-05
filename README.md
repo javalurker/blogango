@@ -53,7 +53,7 @@ var duoshuoQuery = {short_name:"d4blog"};
 update your username
 
 
-4、execute: python manage.py syncdb
+4、python manage.py syncdb
 
 
 5、run server，
