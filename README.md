@@ -1,8 +1,8 @@
 blogango
 ========
-blogango是一个基于django框架的python博客APP
+blogango is blog app,base django framework with python.
 
-基于：
+requirements：
 
 django1.4
 
@@ -14,13 +14,13 @@ jinja2
 
 jingo
 
-多说评论系统
+duoshuo comment sys
 
-1、安装jinja2， easy_install jinja2
+1、install jinja2， easy_install jinja2
 
-2、修改settings.py配置如下：
+2、update settings.py：
 
-A、加入jingo,修改settings配置文件
+A、add jingo,update settings.py
 
 TEMPLATE_LOADERS = (
     'jingo.Loader',
@@ -29,10 +29,10 @@ TEMPLATE_LOADERS = (
 )
 
 
-B、加入django-taggit
+B、add django-taggit
 
 
-C、修改INSTALLED_APPS
+C、update INSTALLED_APPS:
 
 	...
 	'blogango',
@@ -40,7 +40,7 @@ C、修改INSTALLED_APPS
 	...
 	
 
-3、创建多说评论系统账号，修改macros.html
+3、you must create duoshuo comment sys account，update macros.html
 
 <!-- Duoshuo Comment BEGIN -->
 <div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>
@@ -50,13 +50,12 @@ var duoshuoQuery = {short_name:"d4blog"};
 <script type="text/javascript" src="http://static.duoshuo.com/embed.js" async="true"></script>
 <!-- Duoshuo Comment END -->
 
-改成你自己的多说账号
+update your username
 
 
-4、执行：python manage.py syncdb
+4、execute: python manage.py syncdb
 
-创建你的admin site账号，
 
-5、启动服务，
+5、run server，
 
-输入http://localhost:8000/blog/javalurker（其中javalurker为你的系统账号，admin创建；blog为你自定义的urls）
+input http://localhost:8000/blog/javalurker in your browser (javalurker is your admin site username；blog is your urls config)
