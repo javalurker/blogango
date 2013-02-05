@@ -14,7 +14,7 @@ jinja2
 
 jingo
 
-duoshuo comment sys
+duoshuo. a social comment system
 
 1、install jinja2， easy_install jinja2
 
@@ -40,7 +40,7 @@ C、update INSTALLED_APPS:
 	...
 	
 
-3、you must create duoshuo comment sys account，update macros.html
+3、you must create duoshuo comment system account，update macros.html
 
 <!-- Duoshuo Comment BEGIN -->
 <div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>
