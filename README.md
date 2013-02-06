@@ -3,16 +3,11 @@ blogango
 blogango is blog app,base django framework with python.
 
 requirements：
-
-django1.4
-
-django admin site
-
-django-taggit
-
-jinja2
-
-jingo
+> django1.4  
+> django admin site  
+> django-taggit  
+> jinja2  
+> jingo  
 
 duoshuo. a social comment system
 
