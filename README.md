@@ -2,7 +2,7 @@ blogango
 ========
 blogango is blog app,base django framework with python.
 
-requirements：
+# requirements：  
 > django1.4  
 > django admin site  
 > django-taggit  
@@ -10,12 +10,13 @@ requirements：
 > jingo  
 > duoshuo. a social comment system  
 
-1、install jinja2，  
+# step by step  
+## 1、install jinja2，  
 > easy_install jinja2  
 
-2、update settings.py：
+## 2、update settings.py：
 
-A、add jingo,update settings.py
+### A、add jingo,update settings.py
 
 > TEMPLATE_LOADERS = (  
 >     'jingo.Loader',  
@@ -24,10 +25,10 @@ A、add jingo,update settings.py
 > )
 
 
-B、add django-taggit
+### B、add django-taggit
 
 
-C、update INSTALLED_APPS:
+### C、update INSTALLED_APPS:
 
 > ...  
 > 'blogango',  
@@ -35,7 +36,7 @@ C、update INSTALLED_APPS:
 > ...
 	
 
-3、you must create duoshuo comment system account，update macros.html
+## 3、you must create duoshuo comment system account，update macros.html
 
 > <!-- Duoshuo Comment BEGIN -->  
 > <div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>  
@@ -48,9 +49,9 @@ C、update INSTALLED_APPS:
 update your username
 
 
-4、python manage.py syncdb
+## 4、python manage.py syncdb
 
 
-5、run server，
+## 5、run server，
 
 input http://localhost:8000/blog/javalurker in your browser (javalurker is your admin site username；blog is your urls config)
