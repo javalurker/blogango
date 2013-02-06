@@ -10,7 +10,8 @@ requirements：
 > jingo  
 > duoshuo. a social comment system  
 
-1、install jinja2， easy_install jinja2
+1、install jinja2，  
+> easy_install jinja2  
 
 2、update settings.py：
 
