@@ -8,8 +8,7 @@ requirements：
 > django-taggit  
 > jinja2  
 > jingo  
-
-duoshuo. a social comment system
+> duoshuo. a social comment system  
 
 1、install jinja2， easy_install jinja2
 
