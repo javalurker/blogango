@@ -34,21 +34,21 @@ B、add django-taggit
 
 C、update INSTALLED_APPS:
 
-	...
-	'blogango',
-        'taggit',
-	...
+> ...  
+> 'blogango',  
+> 'taggit',  
+> ...
 	
 
 3、you must create duoshuo comment system account，update macros.html
 
-<!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"d4blog"};
-</script>
-<script type="text/javascript" src="http://static.duoshuo.com/embed.js" async="true"></script>
-<!-- Duoshuo Comment END -->
+> <!-- Duoshuo Comment BEGIN -->  
+> <div class="ds-thread" data-thread-key="0" data-title="{{ title }}"></div>  
+> <script type="text/javascript">  
+> var duoshuoQuery = {short_name:"d4blog"};  
+> </script>  
+> <script type="text/javascript" src="http://static.duoshuo.com/embed.js" async="true"></script>  
+> <!-- Duoshuo Comment END -->
 
 update your username
 
