@@ -49,7 +49,8 @@ blogango is blog app,base django framework with python.
 update your username
 
 
-## 4、python manage.py syncdb
+## 4、sync database  
+> python manage.py syncdb
 
 
 ## 5、run server，
