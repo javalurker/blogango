@@ -22,10 +22,10 @@ duoshuo. a social comment system
 
 A、add jingo,update settings.py
 
-> TEMPLATE_LOADERS = (
->    'jingo.Loader',
->    'django.template.loaders.filesystem.Loader',
->    'django.template.loaders.app_directories.Loader',
+> TEMPLATE_LOADERS = (  
+>    'jingo.Loader',  
+>    'django.template.loaders.filesystem.Loader',  
+>    'django.template.loaders.app_directories.Loader',  
 > )
 
 
