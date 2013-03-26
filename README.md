@@ -53,6 +53,9 @@ update your username
 > python manage.py syncdb
 
 
-## 5、run server，
+## 5、add "(r'^blog/', include('blogango.urls'))" to urls.py
+
+
+## 6、run server，
 
 input http://localhost:8000/blog/javalurker in your browser (javalurker is your admin site username；blog is your urls config)
